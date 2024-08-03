@@ -32,3 +32,7 @@ console.log(wrong);
 
 // для форматирования кода
 // npx prettier --write ./src/javascript/index.js
+
+//Для анализа производительности вашего проекта
+// Запускаем скрипт, написанные в package.json
+// npm run analys_performance    
