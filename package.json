@@ -1,0 +1,31 @@
+{
+  "name": "test_project_useful_tools",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx parcel index.html",
+    "build": "npx parcel build index.html --public-url ./ && npm run sentry:sourcemaps",
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org rednuts --project javascript ./dist && sentry-cli sourcemaps upload --org rednuts --project javascript ./dist",
+    "start-server": "npx http-server",
+    "analyze-performance": "npx lighthouse http://127.0.0.1:8080 --output html --output-path ./report.html",
+    "analys_performance": "npm-run-all --parallel start-server analyze-performance"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.9.0",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "@sentry/browser": "^8.22.0",
+    "@sentry/cli": "^2.33.1",
+    "@sentry/tracing": "^7.114.0"
+  }
+}
